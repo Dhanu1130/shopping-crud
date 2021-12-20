@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AuthService } from '../auth.service';
 import { ProductService } from '../product.service';
 
 @Component({
@@ -14,7 +15,9 @@ export class ProductsComponent implements OnInit {
   selectedProductToEdit: any;
   @ViewChild('close') closeButton:ElementRef 
 
-  constructor(private prod: ProductService) { }
+  constructor(
+    private prod: ProductService,
+    public auth:AuthService) { }
 
   ngOnInit(): void {
     this.getAllProducts();

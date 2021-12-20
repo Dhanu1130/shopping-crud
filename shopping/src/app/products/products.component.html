@@ -23,8 +23,8 @@
                 </div>
                 <div class="card-footer">
                     <button type="button" class="btn btn-warning me-3" data-bs-toggle="modal"
-                        data-bs-target="#editProduct" (click)=onEditProduct(product)>Edit</button>
-                    <button class="btn btn-danger" (click)="onDelete(product)">Delete</button>
+                        data-bs-target="#editProduct" *ngIf = "this.auth.isAdmin()" (click)=onEditProduct(product)>Edit</button>
+                    <button class="btn btn-danger" *ngIf = "this.auth.isAdmin()" (click)="onDelete(product)">Delete</button>
                 </div>
             </div>
         </div>
