@@ -30,6 +30,9 @@ export class LoginComponent implements OnInit {
         this.route.navigate(['/products'])
       } else {
         this.message = res.message;
+        if(res.message.toLowerCase().trim() === 'no user found'){
+          this.route.navigate(['/register'])
+        }
       }
     }, err => {
       this.error = 'Something went wrong ...try again later..'
