@@ -28,6 +28,13 @@ export class AuthService {
     }
   }
 
+  getToken(){
+    const userDetails = this.getUserDetails();
+    if(userDetails && userDetails.token){
+      return userDetails.token;
+    }
+  }
+
   isAdmin() {
    const userDetails = this.getUserDetails();
    if(userDetails && userDetails.role === 'admin'){
